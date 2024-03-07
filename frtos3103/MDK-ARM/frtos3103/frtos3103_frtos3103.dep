@@ -1,0 +1,1519 @@
+Dependencies for Project 'frtos3103', Target 'frtos3103': (DO NOT MODIFY !)
+CompilerVersion: 6190000::V6.19::ARMCLANG
+F (startup_stm32f103xb.s)(0x65E6F4BA)(--cpu Cortex-M3 -g --diag_suppress=A1950W -I ..\Core\Inc -I ../Core/Inc-I.\RTE\_frtos3103-IC:\DEV\Keil\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\DEV\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 538"--pd "_RTE_ SETA 1"--pd "STM32F10X_MD SETA 1"--pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst--xref -o frtos3103\startup_stm32f103xb.o--depend frtos3103\startup_stm32f103xb.d)
+F (..\Core\Src\ntc_table.c)(0x646522A7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/ntc_table.o -MD)
+I (..\Core\Inc\ntc_table.h)(0x6465204F)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (..\Core\Src\slip.c)(0x6464A13A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/slip.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x63888F58)
+I (..\Core\Inc\drv_ringbuf.h)(0x64649FC0)
+I (..\Core\Inc\slip.h)(0x6464A0ED)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h)(0x65D90BC7)
+F (..\Core\Src\ds18b20.c)(0x645E483A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/ds18b20.o -MD)
+I (..\Core\Inc\ds18b20.h)(0x653940D6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+I (..\Core\Inc\onewire.h)(0x653940D6)
+F (..\Core\Src\onewire.c)(0x65395568)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/onewire.o -MD)
+I (..\Core\Inc\onewire.h)(0x653940D6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (..\Core\Src\OneWire1.c)(0x65D66750)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/onewire1.o -MD)
+I (..\Core\Inc\OneWire1.h)(0x65D666E9)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
+F (..\Core\Src\llist.c)(0x65E17D87)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/llist.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63888F58)
+I (..\Core\Inc\llist.h)(0x65E17DAB)
+F (../Core/Src/main.c)(0x65E8B6CF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/main.o -MD)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Core\Inc\adc.h)(0x65DC7C81)
+I (..\Core\Inc\dma.h)(0x65D90785)
+I (..\Core\Inc\i2c.h)(0x65D90786)
+I (..\Core\Inc\rtc.h)(0x65E07323)
+I (..\Core\Inc\tim.h)(0x65D90786)
+I (..\Core\Inc\usart.h)(0x65D90786)
+I (..\Core\Inc\gpio.h)(0x65D90782)
+I (..\Core\Inc\slip.h)(0x6464A0ED)
+I (..\Core\Inc\drv_ringbuf.h)(0x64649FC0)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\math.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
+I (..\Core\Inc\onewire.h)(0x653940D6)
+I (..\Core\Inc\ds18b20.h)(0x653940D6)
+I (..\Core\Inc\OneWire1.h)(0x65D666E9)
+I (..\Core\Inc\llist.h)(0x65E17DAB)
+F (../Core/Src/gpio.c)(0x65E0748F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/gpio.o -MD)
+I (..\Core\Inc\gpio.h)(0x65D90782)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/freertos.c)(0x65E8C6F1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/freertos.o -MD)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.h)(0x65D90BC7)
+I (..\Core\Inc\i2c.h)(0x65D90786)
+I (..\Core\Inc\adc.h)(0x65DC7C81)
+I (..\Core\Inc\ntc_table.h)(0x6465204F)
+I (..\Core\Inc\slip.h)(0x6464A0ED)
+I (..\Core\Inc\drv_ringbuf.h)(0x64649FC0)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\math.h)(0x63888F58)
+I (..\Core\Inc\onewire.h)(0x653940D6)
+I (..\Core\Inc\ds18b20.h)(0x653940D6)
+F (../Core/Src/adc.c)(0x65DDB155)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/adc.o -MD)
+I (..\Core\Inc\adc.h)(0x65DC7C81)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/dma.c)(0x65E6EC60)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/dma.o -MD)
+I (..\Core\Inc\dma.h)(0x65D90785)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/i2c.c)(0x65E6EC60)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/i2c.o -MD)
+I (..\Core\Inc\i2c.h)(0x65D90786)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/rtc.c)(0x65E08868)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/rtc.o -MD)
+I (..\Core\Inc\rtc.h)(0x65E07323)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/tim.c)(0x65D90786)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/tim.o -MD)
+I (..\Core\Inc\tim.h)(0x65D90786)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/usart.c)(0x65DDA0FC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/usart.o -MD)
+I (..\Core\Inc\usart.h)(0x65D90786)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/stm32f1xx_it.c)(0x65E6EC61)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_it.o -MD)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_it.h)(0x65E6EC61)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+F (../Core/Src/stm32f1xx_hal_msp.c)(0x65D90786)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_msp.o -MD)
+I (..\Core\Inc\main.h)(0x65E30ABB)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/stm32f1xx_hal_timebase_tim.c)(0x65D90787)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_timebase_tim.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_gpio_ex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_adc.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_adc_ex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_rcc.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_rcc_ex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_gpio.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_dma.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_cortex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_pwr.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_flash.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_flash_ex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_exti.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_i2c.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_rtc.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_rtc_ex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_tim.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_tim_ex.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x65D90BF6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stm32f1xx_hal_uart.o -MD)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Core/Src/system_stm32f1xx.c)(0x6139CA2C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/system_stm32f1xx.o -MD)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h)(0x65D90BF6)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x65D90BF6)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x65E07325)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x65D90BF6)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x65D90BF6)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x65D90BF6)
+F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/croutine.o -MD)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\croutine.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/event_groups.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/list.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/queue.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/stream_buffer.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\stream_buffer.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/tasks.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\stack_macros.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/timers.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/cmsis_os2.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x65D90BC3)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x65D90BC3)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/heap_4.o -MD)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63888F58)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c)(0x65D90BC7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3-I./RTE/_frtos3103-IC:/DEV/Keil/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/DEV/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o frtos3103/port.o -MD)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h)(0x65D90BC7)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63888F58)
+I (C:\DEV\Keil\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63888F58)
+I (..\Core\Inc\FreeRTOSConfig.h)(0x65D90785)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h)(0x65D90BC7)
+I (..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h)(0x65D90BC7)
