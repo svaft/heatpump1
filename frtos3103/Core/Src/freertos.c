@@ -65,7 +65,7 @@ static void prvTask2( void *pvParameters );
 extern TaskHandle_t xTask1;
 	//static TaskHandle_t xTask1 = NULL, xTask2 = NULL;
 
-
+extern config_t config;
 extern scheduler_t scheduler[];
 extern int sch_pos;
 extern uint8_t sch_size;
@@ -73,15 +73,10 @@ extern uint8_t sch_size;
 extern int cnt;
 extern uint8_t dummyAlert;
 
-extern int tempSet1;
-extern int tempSet0;
-
-extern int defaultTempSet0;
-extern int defaultTempSet1;
+extern esp2stm_i2c_status1_t 	i2c_rxStatus;
+extern esp2stm_i2c_scheduler_t i2c_rxScheduler;
 
 
-extern int cnt1;
-extern int cnt2;
 extern int cnt_flow1;
 extern int cnt_flow2;
 extern UART_HandleTypeDef huart3;
@@ -166,18 +161,24 @@ static void prvTask1( void *pvParameters )
 				if(dummyAlert == 1){
 					dummyAlert = 0;
 				} else { // apply temp correction from scheduler:
-					if(scheduler[sch_pos].channel == 0)
-						tempSet0 = scheduler[sch_pos].temp > 0 ? scheduler[sch_pos].temp : defaultTempSet0;
-					else 
-						tempSet1 = scheduler[sch_pos].temp > 0 ? scheduler[sch_pos].temp : defaultTempSet1;
+					uint16_t tempLoc;
+					if(scheduler[sch_pos].tempDeltaMode == 0) {
+						if(scheduler[sch_pos].channel == 0)
+							config.setTempFloor = scheduler[sch_pos].temp != 0 ? scheduler[sch_pos].temp : defaultTempSet0;
+						else 
+							config.setTempWater = scheduler[sch_pos].temp != 0 ? scheduler[sch_pos].temp : defaultTempSet1;
+					} else {
+//						config.setTempFloor += scheduler[sch_pos].temp;
+						// todo
+					}
 					if(sch_pos<sch_size-1){ // check next entry if it with the same tima and date but other channel:
-						int mask1 = *(uint32_t *)&scheduler[sch_pos] & 0xFFFC0000;
-						int mask2 = *(uint32_t *)&scheduler[sch_pos+1] & 0xFFFC0000;
+						int mask1 = *(uint32_t *)&scheduler[sch_pos] 		& 0xFFFC0000;
+						int mask2 = *(uint32_t *)&scheduler[sch_pos+1] 	& 0xFFFC0000;
 						if( mask1 == mask2 ){
 							if(scheduler[sch_pos+1].channel == 0)
-								tempSet0 = scheduler[sch_pos+1].temp > 0 ? scheduler[sch_pos+1].temp : defaultTempSet0;// scheduler[sch_pos+1].temp;
+								config.setTempFloor = scheduler[sch_pos+1].temp > 0 ? scheduler[sch_pos+1].temp : defaultTempSet0;// scheduler[sch_pos+1].temp;
 							else 
-								tempSet1 = scheduler[sch_pos+1].temp > 0 ? scheduler[sch_pos+1].temp : defaultTempSet1;
+								config.setTempWater = scheduler[sch_pos+1].temp > 0 ? scheduler[sch_pos+1].temp : defaultTempSet1;
 						}
 					}
 				}
@@ -281,6 +282,7 @@ void MX_FREERTOS_Init(void) {
 
 /* USER CODE BEGIN Header_StartDefaultTask */
 extern uint8_t aRxBuffer[];
+extern IWDG_HandleTypeDef hiwdg;
 
 int hal_busy_cnt = 0;
 int sleepD=10;
@@ -302,12 +304,14 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
     osDelay(1000);
-
+//		if(Ntc_Tmp_Raw_prew <20)
+//		HAL_IWDG_Refresh(&hiwdg);
+//LL_IWDG_ReloadCounter(IWDG);
 
 		rtc_conter_delta = RTC_ReadTimeCounter(&hrtc) - rtc_conter;
 		state.duration++;
-		state.flow1+=90;
-		state.flow2+=80;
+//		state.flow1+=90;
+//		state.flow2+=80;
 /*	
 		HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN); // RTC_FORMAT_BIN , RTC_FORMAT_BCD
 		HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN); // RTC_FORMAT_BIN , RTC_FORMAT_BCD
@@ -454,7 +458,7 @@ void StartTask02(void *argument)
   /*##-4- Put I2C peripheral in reception process ############################*/  
   do
   {
-    if(HAL_I2C_Master_Receive_DMA(&hi2c1, (uint16_t)17<<1, (uint8_t *)aRxBuffer, 4) != HAL_OK)
+    if(HAL_I2C_Master_Receive_DMA(&hi2c1, (uint16_t)17<<1, (uint8_t *)&i2c_rxStatus, sizeof(esp2stm_i2c_status1_t)) != HAL_OK)
     {
       /* Error_Handler() function is called in case of error. */
 //      Error_Handler();
@@ -519,13 +523,12 @@ void Callback01(void *argument)
       adcVoltage[i] = Ntc_Tmp; //adcData[i] * 3.3 / 4095;
     }
 */
-	
-//	cnt_flow1 = cnt1;
-//	cnt_flow2 = cnt2;
 
-//	literperhour1 = (cnt_flow1 * 60 / 7.5);
-//	literperhour1 = (cnt_flow1 <<3);
-//	literperhour2 = (cnt_flow2 <<3);
+	config.coldSideFlowLPH = (state.flow1 <<3);
+	config.coldSideFlowLPH -= (config.coldSideFlowLPH>>4); // -6.25% calibration
+	config.hotSideFlowLPH = (state.flow2 <<3);
+	state.flow1 = 0;
+	state.flow2 = 0;
 //	lphd = literperhour1 - literperhour2;
 	#define LED_Pin LL_GPIO_PIN_13
 	#define LED_GPIO_Port GPIOC

@@ -38,24 +38,17 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 typedef struct {
-	uint8_t header[4];
-	uint16_t temp[10];
-	uint32_t flow1;
-	uint32_t flow2;
-	uint32_t duration;
-	uint8_t state_mask[2];
-	uint8_t end[2];	
-} state_t;
-#define STATE_DMA_SIZE sizeof(state_t)
+		uint16_t fsmState 		: 4;
 
-typedef struct {
-	uint8_t header[4];
-	uint32_t flow1;
-	uint32_t flow2;
-	uint32_t duration;
-	uint8_t dummy[17];
-	uint8_t end[2];
-} flow_t;
+		uint16_t waterPump 		: 1; 
+		uint16_t circulPump1 	: 1; 
+		uint16_t circulPump2 	: 1; 
+		uint16_t heater1 			: 1; 
+		uint16_t compressor 	: 1; 
+
+		uint16_t scheduler 		: 1; 
+		uint16_t reserved 		: 6;
+	} state_mask_t;
 
 typedef struct {
 		uint32_t channel : 1;
@@ -67,6 +60,85 @@ typedef struct {
 		uint32_t weekday : 3; // 0 - Sunday, 1 monday, ...  if weekday = 7 - all days timer(todo)? 
 	} scheduler_t;
 
+	
+typedef struct {
+	uint8_t header[4];
+	uint16_t temp[10];
+	uint32_t flow1;
+	uint32_t flow2;
+	uint32_t duration;
+	state_mask_t state_mask;
+	uint8_t end[2];	
+} state_t;
+#define STATE_DMA_SIZE sizeof(state_t)
+
+typedef struct {
+	uint8_t header[4];
+	uint8_t cmd;
+	uint8_t val;
+	uint8_t end[2];	
+} cmd_t;
+#define CMD_DMA_SIZE sizeof(cmd_t)
+
+
+typedef struct {
+	uint32_t Seconds 	: 6;
+	uint32_t Minutes 	: 6;
+	uint32_t Hours 		: 5;
+  uint32_t Date 		: 5;
+	uint32_t Month 		: 4;
+	uint32_t Year 		: 6; //2024 - 0, 2025 - 1, ...
+} timestampCompact_t;
+
+
+
+typedef struct {
+	uint32_t header;
+  timestampCompact_t ts;
+  uint8_t cmd; // cmd from mqtt command topic
+  uint8_t status; // 0 init, 1 connected to mqtt, 2 disconnected(fail)
+  uint8_t dummy[2]; // 0 init, 1 connected to mqtt, 2 disconnected(fail)
+//  uint32_t schedule_len;
+//  scheduler_t schedule[32];
+	//  uint32_t array[64];
+} esp2stm_i2c_status1_t;
+
+
+
+
+
+typedef struct {
+	uint8_t header[4];
+	uint16_t setTempFloor;
+	int16_t setTempFloorHysteresis;
+	uint16_t setTempWater;
+	int16_t setTempWaterHysteresis;
+	uint16_t coldSideFlowLPH;
+	uint16_t hotSideFlowLPH;
+	state_mask_t state_mask;
+	
+	uint8_t error;
+	uint8_t end[2];	
+} config_t;
+
+
+/*
+typedef struct {
+	uint8_t header[4];
+	uint32_t flow1;
+	uint32_t flow2;
+	uint32_t duration;
+	uint8_t dummy[17];
+	uint8_t end[2];
+} flow_t;
+*/
+
+typedef struct {
+  uint32_t header;
+  uint32_t schedule_len;
+  scheduler_t schedule[32];
+} esp2stm_i2c_scheduler_t;
+
 
 /* USER CODE END ET */
 
@@ -77,7 +149,7 @@ typedef struct {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+	
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -112,6 +184,9 @@ uint32_t RTC_ReadTimeCounter(RTC_HandleTypeDef *hrtc);
 /* USER CODE BEGIN Private defines */
 #define ADC_MA_SHIFT   2
 #define ADC_CHANNELS_NUM_RAW   ADC_CHANNELS_NUM<<ADC_MA_SHIFT
+
+#define defaultTempSet0 2400
+#define defaultTempSet1 200
 
 /* USER CODE END Private defines */
 

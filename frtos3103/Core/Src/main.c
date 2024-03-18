@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
+	******************************************************************************
+	* @file           : main.c
+	* @brief          : Main program body
+	******************************************************************************
+	* @attention
+	*
+	* <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+	* All rights reserved.</center></h2>
+	*
+	* This software component is licensed by ST under BSD 3-Clause license,
+	* the "License"; You may not use this file except in compliance with the
+	* License. You may obtain a copy of the License at:
+	*                        opensource.org/licenses/BSD-3-Clause
+	*
+	******************************************************************************
+	*/
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -23,6 +23,7 @@
 #include "adc.h"
 #include "dma.h"
 #include "i2c.h"
+#include "iwdg.h"
 #include "rtc.h"
 #include "tim.h"
 #include "usart.h"
@@ -61,12 +62,8 @@
 
 /* USER CODE BEGIN PV */
 
+config_t config;
 
-int defaultTempSet0 = 2400;
-int defaultTempSet1 = 200;
-
-int tempSet0 = 0;
-int tempSet1 = 0;
 
 //DS18B20 temperatureSensor;
 RTC_TimeTypeDef sTime = {0};
@@ -94,10 +91,14 @@ uint8_t start_text[] = "Start scanning I2C: \r\n";
 uint8_t end_text[] = "\r\nStop scanning";
 #define I2C_ESP32_ADDRESS   0x55
 
-int cnt1 = 0;
-int cnt2 = 0;
 int cnt_flow1 = 0;
 int cnt_flow2 = 0;
+
+esp2stm_i2c_status1_t 	i2c_rxStatus;
+esp2stm_i2c_scheduler_t i2c_rxScheduler;
+
+uint8_t i2c_tx_end = 0;
+uint8_t i2c_rx_end = 0;
 
 
 /* adc vars */ 
@@ -123,6 +124,64 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+#define I2C_ESP32_GET_STATUS 1
+#define I2C_ESP32_GET_SCHEDULE 2
+
+
+
+uint8_t getEsp32cmd(uint8_t cmd_in, uint8_t *pData, uint16_t Size){
+	cmd_t cmd;
+	HAL_StatusTypeDef hStat;
+	hStat = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)17<<1, 10,100);
+	if(hStat == HAL_OK){
+		cmd.cmd = cmd_in;
+		cmd.header[0] = 0xde;
+		cmd.header[1] = 0xad;
+		cmd.header[2] = 0;
+		cmd.header[3] = sizeof(state_t)-sizeof(cmd.header) - sizeof(cmd.end); // content length
+
+		cmd.end[0] = '\r';
+		cmd.end[1] = '\n';
+
+		if(HAL_I2C_Master_Transmit_DMA(&hi2c1, (uint16_t)17<<1, (uint8_t *) &cmd, CMD_DMA_SIZE)!= HAL_OK){
+			config.error = 1;
+			Error_Handler();
+		}
+	} else if(hStat == HAL_BUSY){
+			config.error = 2;
+		Error_Handler();
+	} 
+	
+	int rxcnt =0;
+	int af_cnt =0;
+	while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY){af_cnt++;}
+	if(i2c_tx_end == 1) {
+		i2c_rx_end = 0;
+		/*##-4- Put I2C peripheral in reception process ############################*/  
+		do
+		{
+			if(HAL_I2C_Master_Receive_DMA(&hi2c1, (uint16_t)17<<1, pData, Size) != HAL_OK){
+				config.error = 3;
+				Error_Handler();
+			}
+			af_cnt++;
+			
+		}
+		while(HAL_I2C_GetError(&hi2c1) == HAL_I2C_ERROR_AF);
+
+		while(i2c_rx_end != 2){
+			rxcnt++;
+			HAL_Delay(1);
+		}
+		return 1;
+	}
+	return 0;
+}
+
+
+
+
 //float adcVoltage[3];
 uint16_t adc_cnt=0;
 uint16_t t1sum_tmp=0;
@@ -157,58 +216,61 @@ int i2ccnt = 0;
 int i2ccntRX = 0;
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *I2cHandle)
 {
+	i2c_tx_end = 1;
 	i2ccnt++;
 }
-uint8_t i2c_rx_end = 0;
 uint8_t aRxBuffer[4];
+
+uint8_t i2c_esp32_RxBuffer[100];
+
 
 uint8_t aRxBufferCp[4];
 
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
 {
-	uint32_t *rxBufPtr = (uint32_t *)&aRxBuffer;
-	if(*(uint32_t *)&aRxBuffer != 0)
-		*(uint32_t *)&aRxBufferCp = *(uint32_t *)&aRxBuffer;
+//	uint32_t *rxBufPtr = (uint32_t *)&aRxBuffer;
+//	if(*(uint32_t *)&aRxBuffer != 0)
+//		*(uint32_t *)&aRxBufferCp = *(uint32_t *)&aRxBuffer;
 	i2c_rx_end = 1;
-  i2ccntRX++;
+	i2ccntRX++;
 }
 
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *I2cHandle)
 {
-  /** Error_Handler() function is called when error occurs.
-    * 1- When Slave doesn't acknowledge its address, Master restarts communication.
-    * 2- When Master doesn't acknowledge the last data transferred, Slave doesn't care in this example.
-    */
-  if (HAL_I2C_GetError(I2cHandle) != HAL_I2C_ERROR_AF)
-  {
-    Error_Handler();
-  }
+	/** Error_Handler() function is called when error occurs.
+		* 1- When Slave doesn't acknowledge its address, Master restarts communication.
+		* 2- When Master doesn't acknowledge the last data transferred, Slave doesn't care in this example.
+		*/
+	if (HAL_I2C_GetError(I2cHandle) != HAL_I2C_ERROR_AF)
+	{
+		Error_Handler();
+	}
 }
 
 
 
 uint32_t RTC_ReadTimeCounter(RTC_HandleTypeDef *hrtc)
 {
-  uint16_t high1 = 0U, high2 = 0U, low = 0U;
-  uint32_t timecounter = 0U;
+	uint16_t high1 = 0U, high2 = 0U, low = 0U;
+	uint32_t timecounter = 0U;
 
-  high1 = READ_REG(hrtc->Instance->CNTH & RTC_CNTH_RTC_CNT);
-  low   = READ_REG(hrtc->Instance->CNTL & RTC_CNTL_RTC_CNT);
-  high2 = READ_REG(hrtc->Instance->CNTH & RTC_CNTH_RTC_CNT);
+	high1 = READ_REG(hrtc->Instance->CNTH & RTC_CNTH_RTC_CNT);
+	low   = READ_REG(hrtc->Instance->CNTL & RTC_CNTL_RTC_CNT);
+	high2 = READ_REG(hrtc->Instance->CNTH & RTC_CNTH_RTC_CNT);
 
-  if (high1 != high2)
-  {
-    /* In this case the counter roll over during reading of CNTL and CNTH registers,
-       read again CNTL register then return the counter value */
-    timecounter = (((uint32_t) high2 << 16U) | READ_REG(hrtc->Instance->CNTL & RTC_CNTL_RTC_CNT));
-  }
-  else
-  {
-    /* No counter roll over during reading of CNTL and CNTH registers, counter
-       value is equal to first value of CNTL and CNTH */
-    timecounter = (((uint32_t) high1 << 16U) | low);
-  }
-  return timecounter;
+	if (high1 != high2)
+	{
+		/* In this case the counter roll over during reading of CNTL and CNTH registers,
+			 read again CNTL register then return the counter value */
+		timecounter = (((uint32_t) high2 << 16U) | READ_REG(hrtc->Instance->CNTL & RTC_CNTL_RTC_CNT));
+	}
+	else
+	{
+		/* No counter roll over during reading of CNTL and CNTH registers, counter
+			 value is equal to first value of CNTL and CNTH */
+		timecounter = (((uint32_t) high1 << 16U) | low);
+	}
+	return timecounter;
 }
 
 
@@ -234,13 +296,10 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-  
-  if(hadc->Instance == ADC1)
-  {
+	if(hadc->Instance == ADC1){
 		HAL_ADC_Stop_DMA(&hadc1);
 		uint32_t adcDataTmp[ADC_CHANNELS_NUM];
 		memset(adcDataTmp, 0, ADC_CHANNELS_NUM*4);
-
 		for (uint16_t ich = 0; ich < ADC_CHANNELS_NUM_RAW; ich+=ADC_CHANNELS_NUM){
 			for (uint8_t a = 0; a < ADC_CHANNELS_NUM; a++){
 				adcDataTmp[a]+=ADC_Raw[ich+a];
@@ -249,57 +308,13 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 		for (uint8_t a = 0; a < ADC_CHANNELS_NUM; a++){
 			state.temp[a]=adcDataTmp[a]>>ADC_MA_SHIFT;
 		}
-		
-/*
-		
-		for (uint8_t i = 0; i < ADC_CHANNELS_NUM; i++)
-    {
-			#define NTC_UP_R 9910.0f
-// constants of Steinhart-Hart equation
-			#define A 0.001024126754f
-			#define B 0.0002527981762f
-			#define C 0.000000001961346490f
-			float Ntc_Tmp = 0;
-			uint16_t Ntc_R;
-			Ntc_R = ((NTC_UP_R)/((4095.0/adcData[i]) - 1));
-	// temp
-			float Ntc_Ln = log(Ntc_R);
-			//calc. temperature
-			Ntc_Tmp = (1.0/(A + B*Ntc_Ln + C*Ntc_Ln*Ntc_Ln*Ntc_Ln)) - 273.15;
-
-      adcVoltage[i] = Ntc_Tmp; //adcData[i] * 3.3 / 4095;
-    }
-	*/	
-		
-		/*
-		if(adc_cnt++<16){
-			t1sum_tmp += ADC_Raw[0];
-		} else {
-			t1sum = t1sum_tmp >> 4; 
-
-			float average = 4095.0 / t1sum - 1;
-			average = NTC_UP_R / average;
-			#define BCOEFFICIENT 3950
-			#define THERMISTORNOMINAL 10000
-			steinhart = (BCOEFFICIENT * 298.15 ) / (BCOEFFICIENT + (298.15 * log(average / THERMISTORNOMINAL)))-273.15;
-
-			t1sum_tmp = 0;
-			adc_cnt = 0;
-		}
-		*/
-		
-		
-//		ADC_Raw[0] = HAL_ADC_GetValue(&hadc1);
-		
-//    for (uint8_t i = 0; i < 3; i++)
-//    {
-//      adcVoltage[i] = ADC_Raw[i] * 3.3 / 4095;
-//    }
-  }
+	}
 }
 
 
 void handleScheduler(){
+	if(config.state_mask.scheduler == 0)
+		return;
 	if(sch_size > 0){
 		RTC_AlarmTypeDef salarmstructure;
 		salarmstructure.Alarm = RTC_ALARM_A;
@@ -334,17 +349,23 @@ void handleScheduler(){
 	}
 }
 
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-   if(GPIO_Pin == GPIO_PIN_9)
-   {
-//		 state.flow1++;
-   }
-   if(GPIO_Pin == GPIO_PIN_15) 
-   {
-//		 state.flow2++;
-   }
+	 if(GPIO_Pin == GPIO_PIN_9)
+	 {
+		 state.flow1++;
+		 cnt_flow1++;
+	 }
+	 if(GPIO_Pin == GPIO_PIN_12) 
+	 {
+		 state.flow2++;
+		 cnt_flow2++;
+	 }
 }
+
+
+
 int aa = 0;
 int bb = 0;
 int numcmp(void *a, void *b){
@@ -365,21 +386,11 @@ int numcmp(void *a, void *b){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	/*
-	sch_size = 5;
-	// init random scheduler data
-	for(int a = 0; a<sch_size;a++){
-		scheduler[a].weekday = get_rand(0,6);
-		scheduler[a].hour = get_rand(0,23);
-		scheduler[a].min = get_rand(0,59);
-		scheduler[a].temp = get_rand(1000,2000);
-	}
-	// sort random data:
-  qsort((uint32_t *)&scheduler, sch_size, sizeof(scheduler[0]), comp);	
-*/
+
+	config.setTempFloor = 2400;
+	config.setTempWater = 200;
+	
 	quickDayChange = 20;
-	tempSet0 = 2000;
-	tempSet1 = 150;
 	sch_size = 3;
 
 	scheduler[0].weekday = 5;
@@ -403,25 +414,25 @@ int main(void)
 	state.header[0] = 0xde;
 	state.header[1] = 0xad;
 	state.header[2] = 0;
-	state.header[3] = sizeof(state_t)-4;
+	state.header[3] = sizeof(state_t)-sizeof(state.header) - sizeof(state.end); // content length
 
-	state.state_mask[0] = 0;
-	state.state_mask[1] = 0;
+	state.end[0] = '\r';
+	state.end[1] = '\n';
+
+
+	state.state_mask.fsmState = 0;
 
 	state.flow1 = 0;
 	state.flow2 = 0;
 	state.duration = 0;
 
 	
-	state.end[0] = '\r';
-	state.end[1] = '\n';
-
-
-	
-	
 //	uint32_t from = 1;
 //	(*(scheduler_t *)&from).weekday = 7; // uint to struct
 //	*(uint32_t *)&scheduler = 0xffffffff; // cast struct to uint
+
+
+
 
   /* USER CODE END 1 */
 
@@ -431,21 +442,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-	state.header[0] = 0xde;
-	state.header[1] = 0xad;
-	state.header[2] = 0;
-	state.header[3] = sizeof(state_t)-6;
 
-	state.state_mask[0] = 1;
-	state.state_mask[1] = 2;
 
-		state.flow1 = 5;
-		state.flow2 = 6;
-		state.duration = 7;
-
-	
-	state.end[0] = '\r';
-	state.end[1] = '\n';
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -464,14 +462,50 @@ int main(void)
   MX_TIM2_Init();
   MX_USART3_UART_Init();
   MX_RTC_Init();
+  MX_IWDG_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
-	sDate.Date = 1;
-	sDate.Month = 03;
-	sDate.WeekDay = 5;
-	sDate.Year = 24;
-	sTime.Hours = 15;
-	sTime.Minutes = 20;
+
+/*
+	1. check devices on I2C bus
+	
+*/
+	
+	
+//	HAL_Delay(1000);
+	
+#define I2C_ESP32_GET_STATUS 		1
+#define I2C_ESP32_GET_SCHEDULE 	2
+
+int rereadCnt = 0;
+int rereadCnt2 = 0;
+
+do{
+	if (getEsp32cmd(I2C_ESP32_GET_SCHEDULE, (uint8_t *)&i2c_rxScheduler, sizeof(esp2stm_i2c_scheduler_t))){
+
+	}
+//	HAL_Delay(1);
+	rereadCnt++;
+} while(i2c_rxScheduler.header != 0xdeadbeef);
+
+//HAL_Delay(300);
+do{
+//for(int a = 0; a < 2; a++){
+	if (getEsp32cmd(I2C_ESP32_GET_STATUS, (uint8_t *)&i2c_rxStatus, sizeof(esp2stm_i2c_status1_t))){
+
+	}
+//	HAL_Delay(2);
+//	HAL_Delay(1);
+	rereadCnt2++;
+} while(i2c_rxStatus.header != 0xdeadbe1f);
+
+	sDate.Date 		= i2c_rxStatus.ts.Date;
+	sDate.Month 	= i2c_rxStatus.ts.Month;
+//	sDate.WeekDay = i2c_esp32_RxBuffer[2];
+	sDate.Year 		= i2c_rxStatus.ts.Year+24;
+	sTime.Hours 	= i2c_rxStatus.ts.Hours;
+	sTime.Minutes = i2c_rxStatus.ts.Seconds;
 
 
 	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN); // RTC_FORMAT_BIN , RTC_FORMAT_BCD
@@ -480,103 +514,11 @@ int main(void)
 	int timeCounter = RTC_ReadTimeCounter(&hrtc);
 
 	handleScheduler();
-		
-		
-		      while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY)
-      {
-      }
 
-
-//		HAL_I2C_Master_Transmit_DMA(&hi2c1,17<<1,(uint8_t *) &state,STATE_DMA_SIZE);
-//		HAL_I2C_Master_Transmit(&hi2c1,17<<1,(uint8_t *) &state,STATE_DMA_SIZE, 10000);
-   int i2cerr = HAL_I2C_GetError(&hi2c1);
-
-			
-  HAL_UART_Transmit(&huart3,(uint8_t *) "start controller\r\n", 18, 128);
-	memcpy(uart_dma_buf_tx,"test1\r\n",7);
-	HAL_UART_Transmit_DMA(&huart3, uart_dma_buf_tx, STATE_DMA_SIZE);
-
-//	HAL_UART_Receive_DMA();
-//	get_ROMid();
-
-//	get_Temperature();
-//	HAL_Delay(2000);
-
-/*
-
-
-
-
-DS18B20_Init(&temperatureSensor, &huart1);
-
-  DS18B20_InitializationCommand(&temperatureSensor);
-  DS18B20_ReadRom(&temperatureSensor);
-  DS18B20_ReadScratchpad(&temperatureSensor);
-
-  uint8_t settings[3];
-  settings[0] = temperatureSensor.temperatureLimitHigh;
-  settings[1] = temperatureSensor.temperatureLimitLow;
-  settings[2] = DS18B20_12_BITS_CONFIG;
-
-  DS18B20_InitializationCommand(&temperatureSensor);
-  DS18B20_SkipRom(&temperatureSensor);
-  DS18B20_WriteScratchpad(&temperatureSensor, settings);
-*/
-
-	
-//	adcData[7] = 2000;
-	slipBuffer_t slip_buf;
-	uint8_t input_buffer[100];
-
-	
-	
-	init_slip_buffer((slipBuffer_t* )&slip_buf, (uint8_t* )input_buffer, 100);
-
-	uint8_t ret;
-
-//  HAL_Delay(1000);
-
-	uint8_t regData = 0;
-	uint8_t regAddress = 1;
+	HAL_UART_Transmit(&huart3,(uint8_t *) "start controller\r\n", 18, 128);
 
 	HAL_ADCEx_Calibration_Start(&hadc1);
-//	HAL_ADC_Start(&hadc1);
-//  HAL_ADC_PollForConversion(&hadc1, 1000);
-//  int digital_result = HAL_ADC_GetValue(&hadc1);
-
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&ADC_Raw, ADC_CHANNELS_NUM_RAW);
-//	DMA_PDATAALIGN_BYTE
-
-
-//  HAL_UART_Transmit(&huart3, start_text, sizeof(start_text), 128);
-	
-//	HAL_I2C_Master_Transmit(&hi2c1, (I2C_ESP32_ADDRESS << 1), &regAddress, 1,  1000);
-//	HAL_I2C_Master_Receive(&hi2c1, (I2C_ESP32_ADDRESS << 1), (uint8_t *)&buf, 64,  1000);
-/*
-	
-// процедура сканирования
-  //HAL_UART_Transmit(&huart1, start_text, sizeof(start_text), 128);
-  for( uint8_t i=1; i<128; i++ ){
-      ret = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 3, 5);
-
-      if ( ret != HAL_OK ){ // нет ответа от адреса
-//          HAL_UART_Transmit(&huart1, separator, sizeof(separator), 128);
-      }
-
-      else if(ret == HAL_OK){ // есть ответ
-				buf[0] = i;
-//          sprintf(buf, "0x%X", i);
-//          HAL_UART_Transmit(&huart1, buf, sizeof(buf), 128);
-      }
-
-//      if( i == 15 ){
-//    	  i = 0;
-//          HAL_UART_Transmit(&huart1, new_line, sizeof(new_line), 128);
-//      } else
-//    	  row ++;
-  }
-//  HAL_UART_Transmit(&huart1, end_text, sizeof(end_text), 128);
-	*/
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -589,21 +531,12 @@ DS18B20_Init(&temperatureSensor, &huart1);
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	while (1)
+	{
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	/*	
-    DS18B20_InitializationCommand(&temperatureSensor);
-    DS18B20_SkipRom(&temperatureSensor);
-    DS18B20_ConvertT(&temperatureSensor, DS18B20_DATA);
-
-    DS18B20_InitializationCommand(&temperatureSensor);
-    DS18B20_SkipRom(&temperatureSensor);
-    DS18B20_ReadScratchpad(&temperatureSensor);
-*/
-  }
+	}
   /* USER CODE END 3 */
 }
 
@@ -620,11 +553,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE
+                              |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
@@ -687,11 +622,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1)
+	{
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
@@ -706,8 +641,8 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+	/* User can add his own implementation to report the file name and line number,
+		 ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
