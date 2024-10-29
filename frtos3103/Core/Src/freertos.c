@@ -81,7 +81,7 @@ extern int cnt_flow1;
 extern int cnt_flow2;
 extern UART_HandleTypeDef huart3;
 extern uint8_t uart_dma_buf_tx[STATE_DMA_SIZE];
-extern uint8_t uart_dma_buf_rx[8];
+extern uint8_t uart_dma_buf_rx[512];
 extern state_t state;
 
 extern RTC_TimeTypeDef sTime;
@@ -93,6 +93,7 @@ uint8_t send_buf[64];
 extern uint16_t ADC_Raw[ADC_CHANNELS_NUM_RAW];  
 //extern uint16_t adcData[ADC_CHANNELS_NUM];
 extern float adcVoltage[ADC_CHANNELS_NUM];
+extern uint8_t adc_complete;
 extern uint16_t t1sum;
 extern DS18B20 temperatureSensor;
 
@@ -111,6 +112,12 @@ uint8_t Sch_100ms = 255;
 unsigned int  literperhour1;
 unsigned int  literperhour2;
 int  lphd;
+
+
+
+osThreadId_t tid_Thread_MsgQueue2;              // thread id 2
+void Thread_MsgQueue2 (void *argument);         // thread function 2
+
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -137,6 +144,11 @@ osTimerId_t myTimer01Handle;
 const osTimerAttr_t myTimer01_attributes = {
   .name = "myTimer01"
 };
+/* Definitions for txBinSemaphore */
+osSemaphoreId_t txBinSemaphoreHandle;
+const osSemaphoreAttr_t txBinSemaphore_attributes = {
+  .name = "txBinSemaphore"
+};
 /* Definitions for myEvent01 */
 osEventFlagsId_t myEvent01Handle;
 const osEventFlagsAttr_t myEvent01_attributes = {
@@ -145,6 +157,16 @@ const osEventFlagsAttr_t myEvent01_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
+
+
+void enableZeroCrossACscanExti(){
+	__HAL_GPIO_EXTI_CLEAR_IT(zeroCrossLine3_Pin);
+	HAL_NVIC_ClearPendingIRQ(EXTI3_IRQn);
+	HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+}
+
+
+
 
 static uint32_t rtc_counter = 0;
 int task_callCnt = 0;
@@ -211,6 +233,15 @@ void uint32toa(uint32_t n, uint8_t s[]){
  }
 
 
+ 
+osStatus_t txStatus(){
+	osStatus_t sem_stat = osSemaphoreAcquire(txBinSemaphoreHandle,10);
+	if(sem_stat == osOK) {
+		state.end.crc = usMBCRC16((uint8_t *)&state, sizeof(state_t)-sizeof(end_t));
+		HAL_UART_Transmit_DMA(&huart3,(uint8_t *) &state, STATE_DMA_SIZE);
+	}
+	return sem_stat;
+}
 
 /* USER CODE END FunctionPrototypes */
 
@@ -234,6 +265,10 @@ void MX_FREERTOS_Init(void) {
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
+  /* Create the semaphores(s) */
+  /* creation of txBinSemaphore */
+  txBinSemaphoreHandle = osSemaphoreNew(1, 1, &txBinSemaphore_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -249,9 +284,11 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* creation of myQueue01 */
-  myQueue01Handle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue01_attributes);
+  myQueue01Handle = osMessageQueueNew (8, 16, &myQueue01_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
+  myQueue01Handle = osMessageQueueNew (5, sizeof(esp2stm_i2c_status1_t), &myQueue01_attributes);
+	
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
@@ -263,11 +300,12 @@ void MX_FREERTOS_Init(void) {
   myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
+/* add threads, ... */
 	rtc_conter = RTC_ReadTimeCounter(&hrtc);
 	state.duration = 0;
-	xTaskCreate( prvTask1, "Task1", 200, NULL, tskIDLE_PRIORITY, &xTask1 );
+	xTaskCreate( prvTask1, "Task1", 128, NULL, tskIDLE_PRIORITY, &xTask1 );
 
-/* add threads, ... */
+
   /* USER CODE END RTOS_THREADS */
 
   /* Create the event(s) */
@@ -291,6 +329,8 @@ uint16_t temp = 0;
 		uint32_t hal_err = 0;
 		uint16_t Ntc_Tmp_Raw_prew = 0; 
 		extern int quickDayChange;
+
+int FSM_CHECK_DEVICES_ERROR_count=0;
 /**
   * @brief  Function implementing the defaultTask thread.
   * @param  argument: Not used
@@ -303,15 +343,53 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1000);
-//		if(Ntc_Tmp_Raw_prew <20)
-//		HAL_IWDG_Refresh(&hiwdg);
-//LL_IWDG_ReloadCounter(IWDG);
 
-		rtc_conter_delta = RTC_ReadTimeCounter(&hrtc) - rtc_conter;
-		state.duration++;
-//		state.flow1+=90;
-//		state.flow2+=80;
+		switch(state.state_mask.fsmState){
+			case FSM_RESTART:
+				state.state_mask.fsmState = FSM_RESTART_GPIO_MODULE_CONNECTING;
+				break;
+			case FSM_RESTART_GPIO_MODULE_CONNECTING:
+				if( changeGPIOstate(0, port20gpioAll) == pdFALSE){
+					state.state_mask.fsmState = FSM_CHECK_DEVICES_ERROR;
+				} else
+					state.state_mask.fsmState = FSM_RESTART_RS485_REMOTE_CONNECTING;
+				break;
+			case FSM_RESTART_RS485_REMOTE_CONNECTING:
+// start handshaking process and wait responce from ESP32 side by rs485  or CAN line
+				state.state_mask.fsmState = FSM_MAIN_RESTRICT_WORKING;
+				break;
+			case FSM_MAIN_RESTRICT_WORKING: 
+				HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADC_Raw, ADC_CHANNELS_NUM_RAW);
+				rtc_conter_delta = RTC_ReadTimeCounter(&hrtc) - rtc_conter;
+				state.duration++;
+				osDelay(100);
+				
+			// wait to ADC complete before crc is calculated:
+				while(adc_complete != 1){
+					osDelay(10);// move to	vTaskNotifyGiveFromISR( xTask1, &pxHigherPriorityTaskWoken ); or semaphore
+				}
+				adc_complete = 0;
+				txStatus();
+				HAL_UARTEx_ReceiveToIdle_DMA(&huart3, uart_dma_buf_rx, RX_BUFER_MAX_SIZE);
+    //disable half transfer interrupt; it is enabled in HAL_UARTEx_ReceiveToIdle_DMA()
+				__HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);
+//				HAL_IWDG_Refresh(&hiwdg);
+//				canSend();
+				osDelay(1000);
+				break;
+			case FSM_CHECK_DEVICES_ERROR:
+				if(FSM_CHECK_DEVICES_ERROR_count++ < 10) //  reboot by watchdog after 10 seconds
+					HAL_IWDG_Refresh(&hiwdg);
+
+				osTimerStop(myTimer01Handle);
+				for(int a = 0; a < 4; a++){
+					HAL_GPIO_TogglePin(LED_Pin_GPIO_Port, LED_Pin_Pin); 
+					osDelay(100);
+				}
+				osDelay(1000);
+		}
+//		if(Ntc_Tmp_Raw_prew <20)
+
 /*	
 		HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN); // RTC_FORMAT_BIN , RTC_FORMAT_BCD
 		HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN); // RTC_FORMAT_BIN , RTC_FORMAT_BCD
@@ -335,105 +413,21 @@ void StartDefaultTask(void *argument)
 		}
 */
 
+//		HAL_StatusTypeDef hStat;
+//		hStat = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)17<<1, 10,100);
+//		if(hStat == HAL_OK){
+//			hal_busy_cnt = 0;
+//    if(HAL_I2C_Master_Transmit_DMA(&hi2c1, (uint16_t)17<<1, (uint8_t *) &state,STATE_DMA_SIZE)!= HAL_OK){
+//      /* Error_Handler() function is called when error occurs. */
+//      Error_Handler();
+//    }} else if(hStat == HAL_BUSY){
+//			hal_busy_cnt++;
+//			if(hal_busy_cnt > 5){ // todo
+//				HAL_I2C_DeInit(&hi2c1);
+//				HAL_I2C_Init(&hi2c1);
+//			}
+//		} 
 
-		HAL_StatusTypeDef hStat;
-		hStat = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)17<<1, 10,100);
-		if(hStat == HAL_OK){
-			hal_busy_cnt = 0;
-    if(HAL_I2C_Master_Transmit_DMA(&hi2c1, (uint16_t)17<<1, (uint8_t *) &state,STATE_DMA_SIZE)!= HAL_OK)
-			
-//    if(HAL_I2C_Master_Seq_Transmit_IT(&hi2c1, (uint16_t)17<<1, (uint8_t *) &state,STATE_DMA_SIZE, I2C_FIRST_FRAME)!= HAL_OK)
-			    {
-      /* Error_Handler() function is called when error occurs. */
-      Error_Handler();
-    }} else if(hStat == HAL_BUSY){
-			hal_busy_cnt++;
-			if(hal_busy_cnt > 5){
-				HAL_I2C_DeInit(&hi2c1);
-				HAL_I2C_Init(&hi2c1);
-			}
-		} 
-	
-//		i2cerr = HAL_I2C_GetError(&hi2c1);
-//		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY)
-//   {
-//			osDelay(sleepD);
-//			i2cerr++;
-//    }
-
-
-		
-		HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADC_Raw, ADC_CHANNELS_NUM_RAW);
-		HAL_UART_Transmit_DMA(&huart3,(uint8_t *) &state, STATE_DMA_SIZE);
-
-		/*
-		DS18B20_InitializationCommand(&temperatureSensor);
-    DS18B20_SkipRom(&temperatureSensor);
-    DS18B20_ConvertT(&temperatureSensor, DS18B20_DATA);
-
-    DS18B20_InitializationCommand(&temperatureSensor);
-    DS18B20_SkipRom(&temperatureSensor);
-    DS18B20_ReadScratchpad(&temperatureSensor);
-
-		
-		
-// A7 - 10.07K
-		// A0 - 9.91K
-//		LL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-
-#define NUMSAMPLES 10// сколько показаний берется для определения среднего значения
-#define SERIESRESISTOR 1070 //номинал подтягивающего резистора для термодатчика
-#define THERMISTORNOMINAL 10000 // сопротивление при 25 градусах по Цельсию
-#define TEMPERATURENOMINAL 25 // t. для номинального сопротивления (практически всегда равна 25 C)
-#define BCOEFFICIENT 3950 // бета коэффициент термистора (из описания продавца)
-
-		
-		uint16_t Ntc_Tmp_Raw = calc_temperature(t1sum); //ADC_Raw[0]);
-		if(Ntc_Tmp_Raw_prew == Ntc_Tmp_Raw){
-			continue;
-		}
-		Ntc_Tmp_Raw_prew = Ntc_Tmp_Raw;
-		uint8_t buf_text[] = "hvac1/group1/sensor1:     ";
-	  uint16_toa(Ntc_Tmp_Raw, &buf_text[21]);
-		
-//		slip_send_packet(buf_text, 25, &send_char);
-//    osDelay(10);
-//		temp=Ntc_Tmp_Raw;
-		int ret = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(I2C_ESP32_ADDRESS<<1), 3, 5);
-		if(ret == HAL_OK)
-			HAL_I2C_Master_Transmit(&hi2c1, (I2C_ESP32_ADDRESS << 1), (uint8_t *)&buf_text, 27,  5);
-		else 
-			hal_err++;
-
-		*/
-		
-		
-		
-		
-		
-		
-		
-		
-	/* get adc value */
-//	HAL_ADC_Start_IT(&hadc1);
-	/* filtering (sma) */
-
-
-//	HAL_ADC_Start(&hadc1);
-	/* Wait for conversion completion before conditional check hereafter */
-//	HAL_ADC_PollForConversion(&hadc1, 1);
-
-//	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADC_Raw, 2);
-
-
-
-
-
-
-		
-//		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-//		osDelay(40);
-		
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -449,28 +443,32 @@ int rx_cnt_ack = 0;
 void StartTask02(void *argument)
 {
   /* USER CODE BEGIN StartTask02 */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(250);
-//	i2c_rx_end = 1;
-		if(HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY )
-  /*##-4- Put I2C peripheral in reception process ############################*/  
-  do
-  {
-    if(HAL_I2C_Master_Receive_DMA(&hi2c1, (uint16_t)17<<1, (uint8_t *)&i2c_rxStatus, sizeof(esp2stm_i2c_status1_t)) != HAL_OK)
-    {
-      /* Error_Handler() function is called in case of error. */
-//      Error_Handler();
+	  esp2stm_i2c_status1_t msg;
+  osStatus_t status;
+ 
+  while (1) {
+    ; // Insert thread code here...
+    status = osMessageQueueGet(myQueue01Handle, &msg, NULL, osWaitForever);   // wait for message
+    if (status == osOK) {
+			rx_cnt_ack++;
+			switch(msg.cmd){
+				case 't':
+					state.setT.set1 = msg.dummy;
+					txStatus();
+					break;
+				case 'T':	
+					state.setT.set2 = msg.dummy;
+					txStatus();
+					break;
+				case 'r':// refresh
+					txStatus();
+					break;
+				case 'P':// refresh
+					state.state_mask.disabled = msg.dummy;
+					txStatus();
+					break;
+			}
     }
-
-    /* When Acknowledge failure occurs (Slave don't acknowledge its address)
-    Master restarts communication */
-		rx_cnt_ack++;
-
-  }
-  while(HAL_I2C_GetError(&hi2c1) == HAL_I2C_ERROR_AF);
-	
   }
   /* USER CODE END StartTask02 */
 }
@@ -479,65 +477,19 @@ void StartTask02(void *argument)
 void Callback01(void *argument)
 {
   /* USER CODE BEGIN Callback01 */
-/*	
-			float ntc_up_r7 = 10080.0f;
-//			#define NTC_UP_R 1.0f
-	
-			float Ntc_R = (ntc_up_r7/((4095.0/adcData[7]) - 1));
-			#define BCOEFFICIENT 3950
-			#define THERMISTORNOMINAL 10000
-			adcVoltage[7] = (BCOEFFICIENT * 298.15 ) / (BCOEFFICIENT + (298.15 * log(Ntc_R / THERMISTORNOMINAL)))-273.15;
-*/
-	/*
-		HAL_ADC_Stop_DMA(&hadc1);
-		HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&ADC_Raw, ADC_CHANNELS_NUM_RAW);
-
-		float ntc_up_r7 = 10080.0f;
-//			#define NTC_UP_R 1.0f
-	
-		for (uint8_t i = 0; i < ADC_CHANNELS_NUM; i++)
-    {
-			float Ntc_R = (ntc_up_r7/((4095.0/adcData[i]) - 1));
-			#define BCOEFFICIENT 3950
-			#define THERMISTORNOMINAL 10000
-			adcVoltage[i] = (BCOEFFICIENT * 298.15 ) / (BCOEFFICIENT + (298.15 * log(Ntc_R / THERMISTORNOMINAL)))-273.15;
-		}
-		
-		*/
-		
-	/*
-	for (uint8_t i = 0; i < ADC_CHANNELS_NUM; i++)
-    {
-// constants of Steinhart-Hart equation
-			#define A 0.001024126754f
-			#define B 0.0002527981762f
-			#define C 0.000000001961346490f
-			float Ntc_Tmp = 0;
-			uint16_t Ntc_R;
-			Ntc_R = ((NTC_UP_R)/((4095.0/adcData[i]) - 1));
-	// temp
-			float Ntc_Ln = log(Ntc_R);
-			//calc. temperature
-			Ntc_Tmp = (1.0/(A + B*Ntc_Ln + C*Ntc_Ln*Ntc_Ln*Ntc_Ln)) - 273.15;
-
-      adcVoltage[i] = Ntc_Tmp; //adcData[i] * 3.3 / 4095;
-    }
-*/
-
 	config.coldSideFlowLPH = (state.flow1 <<3);
 	config.coldSideFlowLPH -= (config.coldSideFlowLPH>>4); // -6.25% calibration
 	config.hotSideFlowLPH = (state.flow2 <<3);
 	state.flow1 = 0;
 	state.flow2 = 0;
-//	lphd = literperhour1 - literperhour2;
-	#define LED_Pin LL_GPIO_PIN_13
-	#define LED_GPIO_Port GPIOC
-	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13); 
+	HAL_GPIO_TogglePin(LED_Pin_GPIO_Port, LED_Pin_Pin); 
   /* USER CODE END Callback01 */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void Thread_MsgQueue2 (void *argument) {
+}
 
 /* USER CODE END Application */
 
