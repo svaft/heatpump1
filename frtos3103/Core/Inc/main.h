@@ -54,12 +54,12 @@ typedef struct {
 
 
 typedef struct {
+	uint8_t compressor 			: 1; 
+	uint8_t heater1 				: 1; 
+	uint8_t heater2 				: 1; 
 	uint8_t waterPump 			: 1; 
 	uint8_t circulPump1 		: 1; 
 	uint8_t circulPump2 		: 1; 
-	uint8_t heater1 				: 1; 
-	uint8_t heater2 				: 1; 
-	uint8_t compressor 			: 1; 
 	uint8_t CrankcaseHeater : 1; 
 	uint8_t reserved				: 1;
 } gpioEx_t;

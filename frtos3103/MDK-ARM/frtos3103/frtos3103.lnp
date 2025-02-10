@@ -21,6 +21,8 @@
 "frtos3103\stm32f1xx_it.o"
 "frtos3103\stm32f1xx_hal_msp.o"
 "frtos3103\stm32f1xx_hal_timebase_tim.o"
+"frtos3103\ssd1306.o"
+"frtos3103\fonts2.o"
 "frtos3103\stm32f1xx_hal_gpio_ex.o"
 "frtos3103\stm32f1xx_hal_adc.o"
 "frtos3103\stm32f1xx_hal_adc_ex.o"

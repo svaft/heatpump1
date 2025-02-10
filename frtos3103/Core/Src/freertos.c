@@ -33,6 +33,7 @@
 #include <math.h>
 #include "onewire.h"
 #include "ds18b20.h"
+#include "ssd1306.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,6 +55,9 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
+#define FLAGS_MSK1 0x00000001U
+ 
+esp2stm_i2c_status1_t msg_by_rs485;
 uint32_t rtc_conter, rtc_conter_delta=0;
 
 
@@ -164,6 +168,14 @@ void enableZeroCrossACscanExti(){
 	HAL_NVIC_ClearPendingIRQ(EXTI3_IRQn);
 	HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 }
+void ui10toa(uint32_t n, uint8_t s[]){
+	int i = 3;
+	do {       /* генерируем цифры в обратном порядке */
+		s[i--] = n % 10 + '0';   /* берем следующую цифру */
+	} while ((n /= 10) > 0);     /* удаляем */
+	while(i>=0)
+		s[i--] = '0';
+ }
 
 
 
@@ -329,7 +341,7 @@ uint16_t temp = 0;
 		uint32_t hal_err = 0;
 		uint16_t Ntc_Tmp_Raw_prew = 0; 
 		extern int quickDayChange;
-
+uint8_t str_redraw = 0;
 int FSM_CHECK_DEVICES_ERROR_count=0;
 /**
   * @brief  Function implementing the defaultTask thread.
@@ -359,9 +371,12 @@ void StartDefaultTask(void *argument)
 				state.state_mask.fsmState = FSM_MAIN_RESTRICT_WORKING;
 				break;
 			case FSM_MAIN_RESTRICT_WORKING: 
+				
+			// start ADC measure
 				HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADC_Raw, ADC_CHANNELS_NUM_RAW);
 				rtc_conter_delta = RTC_ReadTimeCounter(&hrtc) - rtc_conter;
 				state.duration++;
+
 				osDelay(100);
 				
 			// wait to ADC complete before crc is calculated:
@@ -375,7 +390,61 @@ void StartDefaultTask(void *argument)
 				__HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);
 //				HAL_IWDG_Refresh(&hiwdg);
 //				canSend();
-				osDelay(1000);
+
+				// update screen
+				SSD1306_Fill(SSD1306_COLOR_BLACK);
+				SSD1306_GotoXY(0, 0);
+				switch( msg_by_rs485.status){
+					case 0: 				
+						SSD1306_Puts2("0", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+						break;
+					case 1: 				
+						SSD1306_Puts2("1", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+						break;
+					case 2: 				
+						SSD1306_Puts2("2", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+						break;
+				}
+				char bufi[4];
+				*(uint32_t *)&bufi = 0;
+				if(state.temp[9]>=1996)
+					state.temp[9] -= 1996;
+				else
+					state.temp[9] = 0;					
+					
+				ui10toa(state.temp[9], (uint8_t *)&bufi);
+				SSD1306_Puts2(bufi, &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+
+				SSD1306_Puts2("offline", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+//				SSD1306_Puts2("...", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+				for(int a=0;a<str_redraw;a++){
+					SSD1306_Puts2(".",&microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+				}
+				if(str_redraw++>5)
+					str_redraw = 0;
+//				if(msg_by_rs485.cmd)
+					
+				state.gpio_mask.compressor = !(state.gpio_mask.compressor);
+				changeGPIOstate(0, 0);
+
+				SSD1306_GotoXY(0, 16);
+
+				state.gpio_mask.compressor ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.heater1 ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.heater2 ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.waterPump ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.circulPump1 ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.circulPump2 ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.CrankcaseHeater ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+				state.gpio_mask.reserved ? SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo) : SSD1306_Putc2big('0',&microsoftSansSerif_12ptFontInfo);
+//				SSD1306_Putc2big('1',&microsoftSansSerif_12ptFontInfo);
+//				SSD1306_Puts2("1011101111", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+
+				SSD1306_UpdateScreen();
+//				state.gpio_mask.circulPump1 = !(state.gpio_mask.circulPump1);
+				osEventFlagsWait( myEvent01Handle, FLAGS_MSK1, osFlagsWaitAny, osWaitForever); // wait one second timer tick event
+
+//				osDelay(1000);
 				break;
 			case FSM_CHECK_DEVICES_ERROR:
 				if(FSM_CHECK_DEVICES_ERROR_count++ < 10) //  reboot by watchdog after 10 seconds
@@ -386,7 +455,14 @@ void StartDefaultTask(void *argument)
 					HAL_GPIO_TogglePin(LED_Pin_GPIO_Port, LED_Pin_Pin); 
 					osDelay(100);
 				}
-				osDelay(1000);
+				
+				SSD1306_Fill(SSD1306_COLOR_BLACK);
+				SSD1306_Puts2(bufi, &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+				SSD1306_GotoXY(0, 0);
+				SSD1306_Puts2("device.err", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+				SSD1306_UpdateScreen();
+				
+				osEventFlagsWait( myEvent01Handle, FLAGS_MSK1, osFlagsWaitAny, osWaitForever); // wait one second timer tick event
 		}
 //		if(Ntc_Tmp_Raw_prew <20)
 
@@ -443,28 +519,28 @@ int rx_cnt_ack = 0;
 void StartTask02(void *argument)
 {
   /* USER CODE BEGIN StartTask02 */
-	  esp2stm_i2c_status1_t msg;
+//	  esp2stm_i2c_status1_t msg;
   osStatus_t status;
  
   while (1) {
     ; // Insert thread code here...
-    status = osMessageQueueGet(myQueue01Handle, &msg, NULL, osWaitForever);   // wait for message
+    status = osMessageQueueGet(myQueue01Handle, &msg_by_rs485, NULL, osWaitForever);   // wait for message
     if (status == osOK) {
 			rx_cnt_ack++;
-			switch(msg.cmd){
+			switch(msg_by_rs485.cmd){
 				case 't':
-					state.setT.set1 = msg.dummy;
+					state.setT.set1 = msg_by_rs485.dummy;
 					txStatus();
 					break;
 				case 'T':	
-					state.setT.set2 = msg.dummy;
+					state.setT.set2 = msg_by_rs485.dummy;
 					txStatus();
 					break;
 				case 'r':// refresh
 					txStatus();
 					break;
 				case 'P':// refresh
-					state.state_mask.disabled = msg.dummy;
+					state.state_mask.disabled = msg_by_rs485.dummy;
 					txStatus();
 					break;
 			}
@@ -483,6 +559,7 @@ void Callback01(void *argument)
 	state.flow1 = 0;
 	state.flow2 = 0;
 	HAL_GPIO_TogglePin(LED_Pin_GPIO_Port, LED_Pin_Pin); 
+	osEventFlagsSet(myEvent01Handle, FLAGS_MSK1);
   /* USER CODE END Callback01 */
 }
 
@@ -491,5 +568,66 @@ void Callback01(void *argument)
 void Thread_MsgQueue2 (void *argument) {
 }
 
+#define size_of_data 100
+uint16_t current_data1[size_of_data];
+uint16_t current_data2[size_of_data];
+float calc,result;
+float current_result, current_previous;
+#define offset 2010
+
+static float kalman_filter(float RMS_Value)
+{
+    float x_k1_k1,x_k_k1;
+
+    static float RMS_OLD_Value=0;
+
+    float Z_k;
+
+    static float P_k1_k1;
+
+    static float Q = 0.01;//Q: Regulation noise, Q increases, dynamic response becomes faster, and convergence stability becomes worse
+    static float R = 0.5; //R: Test noise, R increases, dynamic response becomes slower, convergence stability becomes better
+    static float Kg = 0;
+    static float P_k_k1 = 1;
+
+    float kalman_rms;
+    static float kalman_rms_old=0;
+    Z_k = RMS_Value;
+    x_k1_k1 = kalman_rms_old;
+
+    x_k_k1 = x_k1_k1;
+    P_k_k1 = P_k1_k1 + Q;
+
+    Kg = P_k_k1/(P_k_k1 + R);
+
+    kalman_rms = x_k_k1 + Kg * (Z_k - kalman_rms_old);
+    P_k1_k1 = (1 - Kg)*P_k_k1;
+    P_k_k1 = P_k1_k1;
+
+    RMS_OLD_Value = RMS_Value;
+    kalman_rms_old = kalman_rms;
+
+    return kalman_rms;
+}
+
+static float calculate_rms(uint16_t * values)
+{
+	calc=0;
+	for (int i=0;i<size_of_data;i++)
+	{
+		calc=calc+((values[i]-offset) * (values[i]-offset));
+	}
+	calc=calc/size_of_data;
+	calc=sqrt(calc);
+
+	result=kalman_filter(calc);
+	result=0.0206*result-0.2;
+	current_previous=result;
+	return result;
+}
+
+
+ 
 /* USER CODE END Application */
+
 

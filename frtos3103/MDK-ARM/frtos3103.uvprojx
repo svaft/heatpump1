@@ -1162,6 +1162,16 @@
                 </FileArmAds>
               </FileOption>
             </File>
+            <File>
+              <FileName>ssd1306.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\ssd1306.c</FilePath>
+            </File>
+            <File>
+              <FileName>fonts2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\fonts2.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

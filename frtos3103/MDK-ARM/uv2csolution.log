@@ -1,0 +1,9 @@
+1 out of 1 target(s) converted
+Created solution: C:/DEV/projects/heatpump1/frtos3103/MDK-ARM/frtos3103.csolution.yml
+With projects:
+- C:/DEV/projects/heatpump1/frtos3103/MDK-ARM/frtos3103.cproject.yml
+Error: 0 error(s), 1 warning(s):
+Warnings:
+	The target "frtos3103" is configured with following user commands which should be run manually:
+            Before Build/Rebuild
+                cscript.exe ..\version.vbs

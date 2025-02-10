@@ -44,6 +44,7 @@
 #include "OneWire1.h"
 #include "string.h"
 #include "llist.h"
+#include "ssd1306.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -526,6 +527,7 @@ int changeGPIOstate(uint8_t on, uint8_t off){
 	i2c_error_count = 0;
 	return pdTRUE;
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -657,7 +659,13 @@ for(uint8_t i = 0; i < 8; i++)
 
 	int rereadCnt = 0;
 	int rereadCnt2 = 0;
-	
+
+	SSD1306_Init(&hi2c1);
+	SSD1306_Fill(SSD1306_COLOR_BLACK);
+	SSD1306_GotoXY(0, 0);
+
+  SSD1306_Puts2("init.ok", &microsoftSansSerif_12ptFontInfo, SSD1306_COLOR_WHITE);
+	SSD1306_UpdateScreen();
 
 /*
 	do{
